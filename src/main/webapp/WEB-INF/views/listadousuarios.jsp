@@ -43,7 +43,7 @@
 	                &nbsp;
 	                &nbsp;
 	                &nbsp;
-	                <a href="${pageContext.request.contextPath}/eliminar/${u.getRun()}"><img id="imgeliminar" title="eliminar" src="resources/img/eliminar.png"></a> </td>
+	                <a href="${pageContext.request.contextPath}/eliminar/${u.getTipoUsuario()}/${u.getRun()}"><img id="imgeliminar" title="eliminar" src="resources/img/eliminar.png"></a> </td>
 	            </tr>
             </c:forEach>
             

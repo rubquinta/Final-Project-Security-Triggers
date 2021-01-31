@@ -4,9 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="resources/style/style.css">
@@ -94,16 +92,20 @@
 	                <input type="number" name="edad" class="form-control" id="edad">
 	            </div>
 	        </div>
-	        <div class="row divOculto" id="div2">        
+	        <div class="row divOculto" id="div2">
+	        
+	                
 	            
 	            <div class="mb-3">
 	                <label for="titulo" class="form-label">Titulo Profesional</label>
 	                <input type="text" name="titulo" class="form-control" id="titulo">
 	            </div>
+	            
 	            <div class="mb-3">
 	              <label for="fechaIng" class="form-label">Fecha de Ingreso</label>
 	              <input type="text" name="fechaIng" class="form-control" id="fechaIng">
 	            </div>  
+            
             </div>
         	<div class="row divOculto" id="div3">      
 	            
@@ -123,13 +125,7 @@
             </div>            
           </form> 
    	</div>
-    
-    
-    
     </main>
-    
-    
-    
     
         <script>
         

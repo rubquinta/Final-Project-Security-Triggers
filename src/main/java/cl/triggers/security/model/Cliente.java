@@ -7,7 +7,7 @@ import javax.persistence.Id;
 @Entity(name="CLIENTE")
 public class Cliente{
 	
-	@Id
+	
 	@Column(name="RUTCLIENTE")
 	private int rut;
 	@Column(name="CLINOMBRES")
@@ -26,7 +26,7 @@ public class Cliente{
 	private String comuna;
 	@Column(name="CLIEDAD")
 	private int edad;  
-	
+	@Id
 	@Column(name="cliente_runusuario")
 	private int cliente_runUsuario;
 	

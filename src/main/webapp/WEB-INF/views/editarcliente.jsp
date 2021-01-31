@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="resources/style/style.css">
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/javascript/editarcliente.js"></script>
+    <script src="/resources/javascript/editarcliente.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Cliente</title>
@@ -48,16 +48,13 @@
     
     <div class="container"> 
         <form action= "${pageContext.request.contextPath}/editar/Cliente" method="POST" >      
-       
+  		        
+                 
+                <input type="hidden" class="form-control" id="run" name="run" readonly="readonly" value="${usuario.getRun()}" required>
+             
             <div class="mb-3">
-                <label for="runUsuario" class="form-label">RUN <c:out value="${cliente.getCliente_runUsuario()}"></c:out></label>
-                <input type="hidden" value="${cliente.getCliente_runUsuario()}" id="run" name="run">
-            </div>       
-                   
-       
-            <div class="mb-3">
-                <label for="runCliente" class="form-label">RUN Cliente</label>
-                <input type="text" name="runCliente" class="form-control" id="runCliente" value="${cliente.getRut()}">
+                <label for="runCliente" class="form-label">RUT Cliente</label>
+                <input type="text" name="rutCliente" class="form-control" id="rutCliente" value="${cliente.getRut()}">
             </div>
             <div class="mb-3">
                 <label for="nombresCliente" class="form-label">Nombres</label>
@@ -77,17 +74,13 @@
             </div>
             <div class="mb-3">
                 <label for="select" class="form-label">Sistema de salud</label>       
-                <select class="form-select" name="sistemadesalud" id="sistemadesalud"    >
-                    <c:if test="${cliente.getSistemaSalud() == Fonasa}">
-						<option selected value="Fonasa"></option>
-						<option value="Isapre"></option>
-					</c:if>
-					<c:if test="${cliente.getSistemaSalud() == Isapre}">
-						<option selected value="Isapre"></option>
-						<option value="Fonasa"></option>
-					</c:if>
+                <select class="form-select" name="sistemadesalud" id="sistemadesalud"  required="required"   >
+                 		 <option selected value="${cliente.getSistemaSalud()}">${cliente.getSistemaSalud()}</option>  
+	                    <option value="Fonasa">Fonasa</option>
+	                    <option value="Isapre">Isapre</option>				
                     
                 </select>
+                  
                 <input type="hidden" name="sistemadesalud" value="${cliente.getSistemaSalud()}" >
             </div>
             <div class="mb-3">
@@ -108,6 +101,7 @@
             </div>
             
           </form>
+          </div>
 
     </main>
 

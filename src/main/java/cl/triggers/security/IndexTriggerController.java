@@ -8,6 +8,8 @@ import java.util.Locale;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -52,6 +54,42 @@ public class IndexTriggerController {
 		
 		
 	}
+	
+	//Autenticación de Usuario
+
+		@RequestMapping(value="/login")
+		public String login() {
+			
+			return "login";
+		}
+		
+		@RequestMapping(value="/error")
+		public String errorLogin(Model modelo) {
+			
+			System.out.println("Error de login!!");
+			
+			modelo.addAttribute("error", "true");
+			
+			return "login";
+		}
+		
+		@RequestMapping(value="/logoutsucces")
+		public String logout() {
+			
+			Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+			
+			if(auth != null) {
+				
+				SecurityContextHolder.getContext().setAuthentication(null);
+			}
+			
+			return "logout";
+		}
+		
+		@RequestMapping(value="/forbidden")
+		public String noPermitido() {
+			return "forbidden";
+		}
 	
 	
 }

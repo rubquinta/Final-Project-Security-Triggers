@@ -6,7 +6,7 @@
 <head>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" href="resources/style/style.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/style/style.css">
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.js"></script>
     <script src="/resources/javascript/editarcliente.js"></script>
@@ -73,15 +73,21 @@
                 <input type="text" name="afp" class="form-control" id="afp" value="${cliente.getAfp()}">
             </div>
             <div class="mb-3">
-                <label for="select" class="form-label">Sistema de salud</label>       
-                <select class="form-select" name="sistemadesalud" id="sistemadesalud"  required="required"   >
-                 		 <option selected value="${cliente.getSistemaSalud()}">${cliente.getSistemaSalud()}</option>  
-	                    <option value="Fonasa">Fonasa</option>
-	                    <option value="Isapre">Isapre</option>				
-                    
-                </select>
+                <label for="select" class="form-label" id="sistemadesalud">Sistema de salud</label>       
+                <select class="form-select" id="sistema">  
+                    <option selected value="${cliente.getSistemaSalud()}">${cliente.getSistemaSalud()}</option>           
+                   <c:if test="${cliente.getSistemaSalud() == 'Fonasa'}">
+						<option value="Isapre">Isapre</option>
+						 
+					</c:if> 					  
+					<c:if test="${cliente.getSistemaSalud() == 'Isapre'}">
+						<option value="Fonasa">Fonasa</option>
+						 
+					</c:if>       
+				
+				</select>       
                   
-                <input type="hidden" name="sistemadesalud" value="${cliente.getSistemaSalud()}" >
+                <input type="hidden" name="sistemadesalud" id = "tipoSist" value="${cliente.getSistemaSalud()}">
             </div>
             <div class="mb-3">
                 <label for="direccion" class="form-label">Direccion</label>
@@ -104,9 +110,24 @@
           </div>
 
     </main>
+    
+    <script>
+    $("select").change(function(){
 
-    <footer>        
-        <p>© 2020 Los Triggers, Inc.</p> 
-    </footer>
+  	  //Normalmente se envía el value del select
+  	  var inputSelect = $("#sistema").val();
+  	  console.log(inputSelect);
+  	  
+  	  //Puedes capturar el texto seleccionado
+  	  var tipoS = $("select option:selected").text();
+  	  
+  	  //Y asignar el texto al input
+  	  $("#tipoSist").val(tipoS);
+  	});
+    
+    
+    </script>
+
+   <%@include file="pie.jsp"%>
 </body>
 </html>

@@ -13,26 +13,23 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import cl.triggers.security.model.Capacitacion;
 import cl.triggers.security.repositorio.ICapacitacionRepositorio;
+import cl.triggers.security.services.IClienteService;
 
 @Controller
 public class ClienteControllers {
 	
-
-	@Autowired
-	ICapacitacionRepositorio capaRepositorio;
-
-
-	private static final Logger LOGGER = LoggerFactory.getLogger(ClienteControllers.class);
+ 
 	
+	@Autowired
+	IClienteService cliServ;
+
+
 	@RequestMapping(value="/listarcapacitacion", method = RequestMethod.GET)
 	public String inicio(Model model) {
+		 
 		
-		List<Capacitacion> capa = capaRepositorio.findAll();
-		
-		model.addAttribute("capa", capa);
-		
-		
-		LOGGER.info(" Metodo listar capacitacion exitoso");
+		model.addAttribute("capa", cliServ.getAll());
+		 
 		
 		return "listarcapacitaciones";
 		
@@ -46,18 +43,18 @@ public class ClienteControllers {
 	}
 	
 	@RequestMapping(value = "/crearcapacitacion", method = RequestMethod.POST)
-	public String capa (  @RequestParam("idCapacitacion") int idCapacitacion, @RequestParam("rutCliente") int rutCliente,
-		@RequestParam("diaCapacitacion") String diaCapacitacion, @RequestParam("horaCapacitacion") String horaCapacitacion, 
-		@RequestParam("lugarCapacitacion") String lugarCapacitacion, @RequestParam("duracionCapacitacion") String duracionCapacitacion,
+	public String capa (  @RequestParam("idCapacitacion") int idCapacitacion,
+			@RequestParam("rutCliente") int rutCliente,
+		@RequestParam("diaCapacitacion") String diaCapacitacion, 
+		@RequestParam("horaCapacitacion") String horaCapacitacion, 
+		@RequestParam("lugarCapacitacion") String lugarCapacitacion, 
+		@RequestParam("duracionCapacitacion") String duracionCapacitacion,
 		@RequestParam ("cantidadAsistentes") int cantidadAsistentes){
 		
 				
-		Capacitacion capa = new Capacitacion(idCapacitacion, rutCliente, diaCapacitacion, horaCapacitacion, lugarCapacitacion, duracionCapacitacion, cantidadAsistentes);
-		
-		capaRepositorio.save(capa);
-		
-		LOGGER.info(" Metodo crear capacitacion exitoso: " + capa.toString());
-
+		cliServ.saveOne( new Capacitacion(idCapacitacion, rutCliente, diaCapacitacion, 
+				horaCapacitacion, lugarCapacitacion, duracionCapacitacion, cantidadAsistentes));
+		 
 		return "redirect:/listarcapacitacion";
 	}
 }

@@ -56,8 +56,6 @@
 
     </main>
 
-    <footer>        
-        <p>© 2020 Los Triggers, Inc.</p> 
-    </footer>
+    <%@include file="pie.jsp"%>
 </body>
 </html>

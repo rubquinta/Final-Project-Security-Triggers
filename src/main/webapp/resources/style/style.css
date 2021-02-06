@@ -62,6 +62,19 @@ footer{
     width: 40px;
 }
 
+#resultado{
+	text-align: center;
+	list-style: none;
+	padding-bottom: 10px;
+}
+
+#verificar{
+	text-align: right;
+	margin-right: 75px;
+	
+	
+}
+
 #imgeliminar{
     width:40px;
 }

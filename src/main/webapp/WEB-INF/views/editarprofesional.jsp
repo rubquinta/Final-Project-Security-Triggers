@@ -5,7 +5,7 @@
 <head>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" href="view/style/style.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/style/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Profesional</title>
@@ -37,32 +37,30 @@
             <div class="mb-3">
                 <label for="tipoUsuario" class="form-label">Tipo de Usuario</label>
                 <input type="text" class="form-control" id="tipoUsuario" name="tipoUsuario" readonly="readonly" value="${usuario.getTipoUsuario()}" required>
-            </div>
-            
+            </div>  
     	</form>
     </div>
     
     
     <div class="container"> 
         <form action= "${pageContext.request.contextPath}/editar/Profesional" method="POST" >      
-  		        
+  		     <input type="hidden" name="run" value="${usuario.getRun()}">
              <div class="mb-3">
                 <label for="titulo" class="form-label">Titulo Profesional</label>
-                <input type="text" class="form-control" id="titulo" value="${prof.getTitulo()}">
+                <input type="text" class="form-control" name="titulo" id="titulo" value="${prof.getTitulo()}">
             </div><div class="mb-3">
               <label for="fechaing" class="form-label">Fecha de Ingreso</label>
-              <input type="text" class="form-control" id="proyecto" value="${prof.getFechaIngreso()}">
+              <input type="text" class="form-control" name="fechaIng" id="proyecto" value="${prof.getFechaIngreso()}">
             </div>
-            
-            
+              <div class="mb-3">
+                <input type="reset" value="Limpiar" style="color:rgb(139, 136, 136)e;text-decoration-line: underline;background: none; border: none;">             
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </div> 
           </form>
           </div>
          
 
-    </main>
-
-    <footer>        
-        <p>© 2020 Los Triggers, Inc.</p> 
-    </footer>
+    </main> 
+    <%@include file="pie.jsp"%>
 </body>
 </html>

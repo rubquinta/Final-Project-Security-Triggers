@@ -47,6 +47,18 @@ public class AdministrativoServiceImpl implements IAdministrativoService{
 		
 		return pagosRepositorio.findAll();
 	}
+	
+	@Override
+	public List<Cliente> getAllClientes(){
+		
+		return clienteRepositorio.findAll();
+	}
+	
+	@Override
+	public List<Profesional> getAllProf() {
+		 
+		return profRepositorio.findAll();
+	}
 
 	@Override
 	public Usuario getOne(int run) {

@@ -133,3 +133,13 @@ update users set pass = '$2a$10$Pu4QzWDdITnxEJH7MT6CGuKyrObmPDb7TfprBCbRxSbc9m.f
 select usuario as username, pass as password, 1 as enabled from users ;
 
 select usuario as username, role as authority from users;
+
+/*Creap asesorias tabla*/
+
+ CREATE TABLE asesorias (
+    idasesorias NUMBER CONSTRAINT asesorias_pk PRIMARY KEY,
+    asefecharealizacion VARCHAR2(150) CONSTRAINT asesorias_nn1 NOT NULL,
+    asemotivo VARCHAR2(150) CONSTRAINT asesorias_nn2 NOT NULL,
+    asesorias_idCliente NUMBER(9) NOT NULL ,
+    asesorias_idpro NUMBER(9) NOT NULL 
+ ); 

@@ -12,6 +12,8 @@ public interface IAdministrativoService {
 	
 	List<Usuario> getAll();
 	List<Pagos> getAllPagos();	
+	List<Cliente> getAllClientes();
+	List<Profesional> getAllProf();
 	
 	Usuario getOne(int run);
 

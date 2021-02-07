@@ -50,9 +50,15 @@
                       <li><a class="nav-link active" href="${pageContext.request.contextPath}/listarpagos" tabindex="-1">Listado de Pagos</a></li>
                       <li> <a class="nav-link active" href="${pageContext.request.contextPath}/crearpago" tabindex="-1">Crear Pago</a></li>                 
                     </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Listado de Asesorias</a>
+                  </li> 
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Asesorias
+                    </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="nav-link active" href="${pageContext.request.contextPath}/listarasesoria" tabindex="-1">Listado de Asesorias</a></li>
+                      <li> <a class="nav-link active" href="${pageContext.request.contextPath}/crearasesoria" tabindex="-1">Crear Asesorias</a></li>                 
+                    </ul>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Reportes</a>

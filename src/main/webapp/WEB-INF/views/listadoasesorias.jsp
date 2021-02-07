@@ -26,11 +26,10 @@
         	<thead>
             <tr>
                 <td><strong>Id de Asesoria</strong></td>
-                <td><strong>Fecha de Realizacion</strong></td>
-                <td><strong>Motivo Asesoria</strong></td>
+                <td><strong>Fecha de Realizacion</strong></td> 
                 <td><strong>Cliente</strong></td>
                 <td><strong>Profesional: Run/Titulo</strong></td> 
-             
+             	<td><strong>Motivo Asesoria</strong></td>
             </tr>
          	</thead>
          	<tbody>
@@ -38,7 +37,7 @@
          		<tr>
          			<td><c:out value="${a.getIdAsesorias()}"></c:out></td>
          			<td><c:out value="${a.getAsefecharealizacion()}"></c:out></td>
-         			<td><c:out value="${a.getAsemotivo()}"></c:out></td>
+         			
          			<td>
          				<c:forEach var="cli" items="${clientes}">
          					<c:if test="${a.getAsesorias_idCliente() == cli.getCliente_runUsuario()}">
@@ -53,8 +52,10 @@
          					</c:if>
          				</c:forEach>
          			</td>
+         			<td><c:out value="${a.getAsemotivo()}"></c:out></td>
          		</tr>
          	</c:forEach>
+         	
          	</tbody>
          </table>
 

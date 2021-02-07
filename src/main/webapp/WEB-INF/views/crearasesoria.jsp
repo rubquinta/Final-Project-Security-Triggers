@@ -35,10 +35,7 @@
                 <label for="fecharealizacion"class="form-label">Fecha de realización: </label>
                 <input type="text" class="form-control" name="fecharealizacion" id="fecharealizacion" required>
             </div>
-            <div class="mb-3">
-                <label for="motivoasesoria"  class="form-label">Motivo: </label>
-                <input type="text" class="form-control" name="motivoasesoria" id="motivoasesoria"  required>
-            </div>
+            
             
              <div class="mb-3">
 				<label class="form-label">Clientes:</label>
@@ -65,18 +62,35 @@
 				</select> 
 				<input type="hidden" value="${p.getProf_runUsuario()}" id="prof_runUsuario" name="prof_runUsuario">
 			</div>     
-         
+            <div class="mb-3">
+                <label for="motivoasesoria"  class="form-label">Motivo: </label> 
+                <textarea class="form-control" placeholder="Descripción de Motivo" rows="7" cols="40" name="motivoasesoria" id="motivoasesoria" maxlength="50"></textarea>
+                <div id=contador></div>
+            </div>
             <div class="mb-3">
                 <input type="reset" value="Limpiar" style="color:rgb(139, 136, 136)e;text-decoration-line: underline;background: none; border: none;">             
                 <button type="submit" class="btn btn-primary" onclick="validarForm();">Guardar</button>
-            </div>
-                      
+            </div>   
           </form> 
 
     </div>
     
 </main>	
- 
+ <script type="text/javascript">
+    $(document).ready(function(){
+    
+        var max_chars = 50;
+    
+        $('#max').html(max_chars);
+    
+        $('#motivoasesoria').keyup(function() {
+            var chars = $(this).val().length;
+            var diff = max_chars - chars;
+            $('#contador').html(diff);   
+        });
+    });
+    
+    </script>
     <%@include file="pie.jsp"%>
   </body>
 </html>

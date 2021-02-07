@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/style/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-    <title>Crear Asesorias</title>
+    <title>Administrar Asistentes</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
@@ -20,12 +20,58 @@
         <img src="https://nana.pe/assets/images/Header/header-bg.jpg">
     </div>  
      <%@include file="menu.jsp"%>
-    <h1>Crear Asesorias</h1>
+    <h1>Administrar Asistentes</h1>
  </header>
 <main> 
+
+	<table class="table table-hover">
+        	<thead>
+            <tr>
+                <th>Id Asistente</th>
+               <th>Nombre del Asistente</th>
+               <th>Correo Asistente</th>
+               <th>Teléfono de Asistente</th>
+               <th>Eliminar Asistente</th>
+            </tr>
+         	</thead>
+         	<tfoot>
+                    <tr>
+                        <th>Id Asistente</th>
+                        <th>Nombre del Asistente</th>
+                        <th>Correo Asistente</th>
+                        <th>Teléfono de Asistente</th>
+                        <th>Eliminar Asistente</th>
+                    </tr>
+                </tfoot>
+         	<tbody>
+         	<c:forEach var="a" items="${asesorias}">
+         		<tr>
+         			<td><c:out value="${a.getIdAsesorias()}"></c:out></td>
+         			<td><c:out value="${a.getAsefecharealizacion()}"></c:out></td>
+         			
+         			<td>
+         				<c:forEach var="cli" items="${clientes}">
+         					<c:if test="${a.getAsesorias_idCliente() == cli.getCliente_runUsuario()}">
+         						<c:out value="${cli.getNombres()}"></c:out>
+         					</c:if>
+         				</c:forEach>
+         			</td>
+         			<td>
+         				<c:forEach var="prof" items="${prof}">
+         					<c:if test="${a.getAsesorias_idPro() == prof.getProf_runUsuario()}">
+         						<c:out value="${prof.getProf_runUsuario()}"></c:out> <c:out value="${prof.getTitulo()}"></c:out>
+         					</c:if>
+         				</c:forEach>
+         			</td>
+         			<td><c:out value="${a.getAsemotivo()}"></c:out></td>
+         		</tr>
+         	</c:forEach>
+         	
+         	</tbody>
+         </table>
     
     <div class="container"> 
-        <form id="crearasesoria" action= "${pageContext.request.contextPath}/crearasesoria" method="POST">      
+        <form id="admasistentes" action= "${pageContext.request.contextPath}/administrarasist" method="POST">      
             <div class="mb-3">
                 <label for="nombreUsuario" class="form-label">Codigo unico:</label>
                 <input class="form-control" type="number" name="codigounico" id="codigounico" required>

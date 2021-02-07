@@ -29,10 +29,11 @@ El sistema delimita responsabilidades según el tipo de usuario navegando en la 
 Es decir uno tiene acceso denegado a diferentes áreas dependiente
 
 Acceso a Usuario
+
 <---Cliente--->
 Usuario: cliente
 Password: cliente
-Accesos: Crear Capacitación, Listar Capacitación.  
+Accesos: Crear Capacitación, Listar Capacitación, Administrar Asistentes.  
 
 <---Profesional--->
 Usuario: pro

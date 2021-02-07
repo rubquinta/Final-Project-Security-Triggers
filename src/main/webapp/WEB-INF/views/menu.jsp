@@ -19,7 +19,7 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <li><a class="dropdown-item" href="${pageContext.request.contextPath}/crearcapacitacion ">Crear capacitacion</a></li>
                       <li><a class="dropdown-item" href="${pageContext.request.contextPath}/listarcapacitacion ">Listar capacitaciones</a></li>
-                      
+                      <li><a class="dropdown-item" href="${pageContext.request.contextPath}/administrarasistentes ">Administrar Asistentes</a></li>
                     </ul>
                   </li>
                   <li class="nav-item dropdown">

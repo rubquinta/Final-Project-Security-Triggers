@@ -12,6 +12,7 @@
 		<intercept-url pattern="/login" access="permitAll"/>
 		<intercept-url pattern="/crearcapacitacion" access="hasAuthority('Cliente')"/>
 		<intercept-url pattern="/listarcapacitacion" access="hasAuthority('Cliente')"/>
+		<intercept-url pattern="/administrarasistentes" access="hasAuthority('Cliente')"/>
 		<intercept-url pattern="/crearusuario" access="hasAuthority('Admin')"/>
 		<intercept-url pattern="/listadousuarios" access="hasAuthority('Admin')"/>
 		<intercept-url pattern="/listarpagos" access="hasAuthority('Admin')"/>

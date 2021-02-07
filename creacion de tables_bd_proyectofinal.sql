@@ -143,3 +143,16 @@ select usuario as username, role as authority from users;
     asesorias_idCliente NUMBER(9) NOT NULL ,
     asesorias_idpro NUMBER(9) NOT NULL 
  ); 
+ 
+ /*
+ Creamos la tabla  asistentes con su llave foranea hacia capacitacion
+ */
+create table asistentes (
+    runasistente NUMBER(9) CONSTRAINT asistentes_pk primary key,
+    asistnombrecompleto  varchar2(100)  CONSTRAINT asistentes_nn1 not null,
+    asistedad NUMBER(3) CONSTRAINT asistentes_nn2 not null,
+    asistcorreo varchar2(70),
+    asisttelefono varchar2(20),
+    capacitacion_idcapacitacion NUMBER(9) Not Null
+   
+);

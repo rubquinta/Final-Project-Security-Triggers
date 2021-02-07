@@ -8,7 +8,7 @@ Nombre del Grupo: Los Triggers
 Nombre de los integrantes del grupo
 
 	Francisca Lastra { https://github.com/FranLastra }
-	Rubén Quintana { https://github.com/rubquinta }
+	Rubén Quintana {https://github.com/rubquinta/Final-Project-Security-Triggers }
 	Jeffrey Bustamante { https://github.com/yeeyee }
 
 

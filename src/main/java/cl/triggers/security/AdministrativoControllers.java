@@ -263,8 +263,9 @@ IAdministrativoService usuServ;
 	}
 	
 	@RequestMapping(value = "/crearpago", method = RequestMethod.GET)
-	public String crearpago(){
-		 
+	public String crearpago(Model model){
+		
+		model.addAttribute("clientes", usuServ.getAllClientes());		 
 		
 		return "crearpago";
 	}

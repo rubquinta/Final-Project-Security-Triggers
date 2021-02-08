@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -25,7 +26,7 @@
         <form action= "${pageContext.request.contextPath}/crearpago" method="POST">
              <div class="mb-3">
                 <label for="idPagos" class="form-label">Id del Pago</label>
-                <input type="text" class="form-control" id="idPagos" name="idPagos" required>
+                <input type="number" class="form-control" id="idPagos" name="idPagos" required>
             </div>
              <div class="mb-3">
                 <label for="fechaPago" class="form-label">Fecha del Pago</label>
@@ -33,7 +34,7 @@
             </div>
             <div class="mb-3">
                 <label for="montoPago" class="form-label">Monto del Pago</label>
-                <input type="text" class="form-control" id="montoPago" name="montoPago" required>
+                <input type="number" class="form-control" id="montoPago" name="montoPago" required>
             </div>
             <div class="mb-3">
                 <label for="mesPago" class="form-label">Mes del pago</label>
@@ -42,11 +43,20 @@
             <div class="mb-3">
                 <label for="anioPago" class="form-label">Año del pago</label>
                 <input type="text" class="form-control" id="anioPago" name="anioPago" required>
-            </div>
+            </div>      
+            
             <div class="mb-3">
-                <label for="rutCliente" class="form-label">RUT del Cliente</label>
-                <input type="text" class="form-control" id="rutCliente" name="idPagos_rutCliente" required>
-            </div>           
+				<label class="form-label">RUT Cliente:</label>
+				
+				<select class="form-select" name="idPagos_rutCliente" required="required">
+				<c:forEach var="c" items="${clientes}">
+					 <option value="${c.getCliente_runUsuario()}">
+						<c:out value="${c.getCliente_runUsuario()}"></c:out> <c:out value="${c.getNombres()}"></c:out>
+					</option> 
+				</c:forEach>
+				</select> 
+				<input type="hidden" value="${p.getCliente_runUsuario()}" id="idPagos_rutCliente" name="idPagos_rutCliente">
+			</div>   
             <div class="mb-3">
                 <input type="reset" value="Limpiar" style="color:rgb(139, 136, 136)e;text-decoration-line: underline;background: none; border: none;">             
                 <button type="submit" class="btn btn-primary">Guardar</button>

@@ -78,12 +78,13 @@ Tabla Administrativo
  
  CREATE TABLE pagos (
     idpagos NUMBER (9)CONSTRAINT pagos_pk PRIMARY KEY,
-    fechapago date CONSTRAINT pagos_nn1 NOT NULL,
+    fechapago VARCHAR2(20) CONSTRAINT pagos_nn1 NOT NULL,
     montopago number(20) CONSTRAINT pagos_nn2 NOT NULL,
     mespago VARCHAR2(11) CONSTRAINT pagos_nn3 NOT NULL,
     aniopago VARCHAR2(20) CONSTRAINT pagos_nn4 NOT NULL,
     idpagos_rutcliente NUMBER(9) CONSTRAINT pagos_nn5 NOT NULL 
  );
+ 
  
  
  /*Creo tabla visita

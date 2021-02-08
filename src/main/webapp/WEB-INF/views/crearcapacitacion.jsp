@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -25,28 +26,39 @@
                 <label for="idCapacitacion" class="form-label">Id Capacitacion</label>
                 <input type="number" class="form-control" name="idCapacitacion" id="idCapacitacion" required>
             </div>
+                
+            
             <div class="mb-3">
-                <label for="rutCliente" class="form-label">RUT Cliente</label>
-                <input type="text" class="form-control" name="rutCliente" id="rutCliente" required>
-            </div>            
+				<label class="form-label">RUT Cliente:</label>
+				
+				<select class="form-select" name="rutCliente" required="required">
+				<c:forEach var="c" items="${clientes}">
+					 <option value="${c.getCliente_runUsuario()}">
+						<c:out value="${c.getCliente_runUsuario()}"></c:out> <c:out value="${c.getNombres()}"></c:out>
+					</option> 
+				</c:forEach>
+				</select> 
+				<input type="hidden" value="${p.getCliente_runUsuario()}" id="rutCliente" name="rutCliente">
+			</div> 
+                
             <div class="mb-3">
-                <label for="diaCapacitacion" class="form-label">Dia</label>
+                <label for="diaCapacitacion" class="form-label">Dia:</label>
                 <input type="text" class="form-control" name="diaCapacitacion" id="diaCapacitacion" required>
             </div>
             <div class="mb-3">
-                <label for="horaCapacitacion" class="form-label">Hora</label>
+                <label for="horaCapacitacion" class="form-label">Hora:</label>
                 <input type="text" class="form-control" name="horaCapacitacion" id="horaCapacitacion" required>
               </div>
             <div class="mb-3">
-                <label for="lugarCapacitacion" class="form-label">Lugar</label>
+                <label for="lugarCapacitacion" class="form-label">Lugar:</label>
                 <input type="text" class="form-control" name="lugarCapacitacion" id="lugarCapacitacion" required>
             </div>
             <div class="mb-3">
-                <label for="duracionCapacitacion" class="form-label">Duracion</label>
+                <label for="duracionCapacitacion" class="form-label">Duracion:</label>
                 <input type="text" class="form-control" name="duracionCapacitacion" id="duracionCapacitacion" required>
             </div>
             <div class="mb-3">
-                <label for="cantidadAsistentes" class="form-label">Cantidad de Asistentes</label>
+                <label for="cantidadAsistentes" class="form-label">Cantidad de Asistentes:</label>
                 <input type="number" class="form-control" name="cantidadAsistentes" id="cantidadAsistentes" required>
             </div>
             

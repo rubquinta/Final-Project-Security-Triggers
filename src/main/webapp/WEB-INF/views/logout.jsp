@@ -28,6 +28,25 @@
 
     <main>
 		 <h3  style="color: red;">SESION CERRADA</h3>
+		 
+        <form id="accessform" action="${pageContext.request.contextPath}/login" method="post">
+            <div class="mb-3">
+                <label class="form-label"><b>Rut: </b><span>(Usuario: "cliente" o "admin" o "pro")</span></label>
+                <br>
+                <input type="text" name="username" class="form-control" id="rut" value="" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label"><b>Contraseña: </b><span>(Contraseñas: "cliente" o "admin" o "pro")</span></label>
+                <br>
+                <input class="form-control" type="password" name="password" id="password" required>
+            </div>
+            <div class="mb-3">
+                <input name="reset" type="reset" value="Limpiar" >
+                <button name="submit" type="submit" class="btn-primary submit">Entrar</button>
+            </div>
+            
+        </form>
+		 
     </main>
 
     <%@include file="pie.jsp"%>

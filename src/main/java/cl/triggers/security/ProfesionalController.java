@@ -40,8 +40,9 @@ public class ProfesionalController {
 	
 
 	@RequestMapping(value = "/crearvisita", method = RequestMethod.GET)
-	public String crearVisita(){
+	public String crearVisita(Model model){
 		 
+		model.addAttribute("clientes", usuarioServ.getAllClientes());
 		
 		return "crearvisita";
 	}

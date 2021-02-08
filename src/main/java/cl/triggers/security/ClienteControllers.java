@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import cl.triggers.security.model.Asistentes;
 import cl.triggers.security.model.Capacitacion;
 import cl.triggers.security.repositorio.ICapacitacionRepositorio;
+import cl.triggers.security.services.IAdministrativoService;
 import cl.triggers.security.services.IClienteService;
 
 @Controller
@@ -24,6 +25,9 @@ public class ClienteControllers {
 	
 	@Autowired
 	IClienteService cliServ;
+	
+	@Autowired
+	IAdministrativoService usuarioServ;
 	 
 
 
@@ -39,7 +43,9 @@ public class ClienteControllers {
 	}
 	
 	@RequestMapping(value="/crearcapacitacion", method = RequestMethod.GET)
-	public String capa () {
+	public String capa (Model model) {
+		
+		model.addAttribute("clientes", usuarioServ.getAllClientes());
 		
 		return "crearcapacitacion";
 		

@@ -43,17 +43,7 @@
                         <th>Capacitacion de Asistente</th>
                         <th>Eliminar Asistente</th>
                     </tr>
-                </thead>
-                <tfoot>
-                    <tr>
-                        <th>Id Asistente</th>
-                        <th>Nombre del Asistente</th>
-                        <th>Correo Asistente</th>
-                        <th>Teléfono de Asistente</th>
-                        <th>Capacitacion de Asistente</th>
-                        <th>Eliminar Asistente</th>
-                    </tr>
-                </tfoot>
+                </thead> 
 		         	<tbody>
 		         	<c:forEach var="a" items="${asist}">
 		        		<tr>

@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -25,10 +26,21 @@
                 <label for="idVisita" class="form-label">Id Visita</label>
                 <input type="number" class="form-control" name="idVisita" id="idVisita" required>
             </div>
-            <div class="mb-3">
-                <label for="rutCliente" class="form-label">RUT Cliente</label>
-                <input type="text" class="form-control" name="rutCliente" id="rutCliente" required>
-            </div>            
+                       
+             <div class="mb-3">
+				<label for="rutCliente" class="form-label">Clientes:</label>
+				
+				<select class="form-select" name="rutCliente" required="required">
+				<c:forEach var="c" items="${clientes}">
+					 <option value="${c.getCliente_runUsuario()}">
+						<c:out value="${c.getCliente_runUsuario()}"></c:out> <c:out value="${c.getNombres()}"></c:out>
+					</option> 
+				</c:forEach>
+				</select> 
+				<input type="hidden" value="${p.getCliente_runUsuario()}" id="rutCliente" name="rutCliente">
+			</div> 
+            
+            
             <div class="mb-3">
                 <label for="fecha" class="form-label">Fecha</label>
                 <input type="text" class="form-control" name="fecha" id="fecha" required>

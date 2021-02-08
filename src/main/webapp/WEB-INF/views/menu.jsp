@@ -12,9 +12,7 @@
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/contacto">Contacto</a>
                   </li>  
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/login">Login</a>
-                  </li>                
+                                
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Capacitacion 
@@ -66,6 +64,9 @@
                   <li class="nav-item">
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Reportes</a>
                   </li> 
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/login">Entrar</a>
+                  </li>  
                   <li class="nav-item">
                     <a class="nav-link active" href="${pageContext.request.contextPath}/logout" tabindex="-1" >Salir</a>
                   </li>

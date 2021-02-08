@@ -48,7 +48,7 @@
 					</option> 
 				</c:forEach>
 				</select> 
-				<input type="hidden" value="${p.getProf_runUsuario()}" id="cliente_runUsuario" name="cliente_runUsuario">
+				<input type="hidden" value="${p.getCliente_runUsuario()}" id="cliente_runUsuario" name="cliente_runUsuario">
 			</div> 
              
             <div class="mb-3">

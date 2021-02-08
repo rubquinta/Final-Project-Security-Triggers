@@ -19,7 +19,7 @@
 		<intercept-url pattern="/crearpago" access="hasAuthority('Admin')"/>
 		<intercept-url pattern="/listadovisitas" access="hasAuthority('Pro')"/>
 		<intercept-url pattern="/crearvisitas" access="hasAuthority('Pro')"/>
-		<intercept-url pattern="/listadoasesorias" access="hasAuthority('Pro')"/>
+		<intercept-url pattern="/listarasesoria" access="hasAuthority('Pro')"/>
 		<intercept-url pattern="/crearasesoria" access="hasAuthority('Pro')"/>
 		
 		 

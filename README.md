@@ -25,7 +25,7 @@ Solución
 Se ha desarrollado un sistema que asegura la mejor gestión de los procesos, la seguridad y la pronta eficacia al mostrar los datos al usuario.
 Se diseña un sistema que permite la mejor distribución de cada uno de sus usuarios como Administrativos, profesionales y Cliente, para saber de forma mas eficaz y rápida en el momento de ocurrido un incidente.
 
-El sistema delimita responsabilidades según el tipo de usuario navegando en la aplicación. Es decir uno tiene acceso denegado a diferentes áreas dependiendo del tipo de usuario. También ciertos casos de uso dependerán de la creación de ciertos usuarios, como en la creación de un asesoría debe haber un cliente y un profesional para poder realizarla, en el caso de crear visitas, pagos y capacitaciones es necesario que exista un cliente. 
+El sistema delimita responsabilidades según el tipo de usuario navegando en la aplicación. Es decir uno tiene acceso denegado a diferentes áreas dependiendo del tipo de usuario. También ciertos casos de uso dependerán de la creación de ciertos usuarios, como en la creación de una asesoría debe haber un cliente y un profesional para poder realizarla, en el caso de crear visitas, pagos y capacitaciones es necesario que exista un cliente. 
 
 Acceso a Usuario
 

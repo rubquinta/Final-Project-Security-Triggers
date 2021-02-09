@@ -9,7 +9,7 @@ Nombre de los integrantes del grupo.
 
 	Francisca Lastra { https://github.com/FranLastra/Final-Project-Security-Triggers }
 	Rubén Quintana {https://github.com/rubquinta/Final-Project-Security-Triggers }
-	Jeffrey Bustamante { https://github.com/yeeyee/Final-Project-Security-Triggers }
+	Jeffrey Bustamante { https://github.com/yeeyeee/Final-Project-Security-Triggers }
 
 
 Contextualización del problema

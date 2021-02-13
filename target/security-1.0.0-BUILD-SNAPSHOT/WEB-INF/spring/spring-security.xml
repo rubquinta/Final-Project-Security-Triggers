@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bean:beans xmlns:bean="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd 
+		http://www.springframework.org/schema/security 
+		http://www.springframework.org/schema/security/spring-security.xsd">
+		
+	<http auto-config="true">
+		<intercept-url pattern="/" access="permitAll"/>
+		<intercept-url pattern="/login" access="permitAll"/>
+		<intercept-url pattern="/crearcapacitacion" access="hasAuthority('Cliente')"/>
+		<intercept-url pattern="/listarcapacitacion" access="hasAuthority('Cliente')"/>
+		<intercept-url pattern="/administrarasistentes" access="hasAuthority('Cliente')"/>
+		<intercept-url pattern="/crearusuario" access="hasAuthority('Admin')"/>
+		<intercept-url pattern="/listadousuarios" access="hasAuthority('Admin')"/>
+		<intercept-url pattern="/listarpagos" access="hasAuthority('Admin')"/>
+		<intercept-url pattern="/crearpago" access="hasAuthority('Admin')"/>
+		<intercept-url pattern="/listadovisitas" access="hasAuthority('Pro')"/>
+		<intercept-url pattern="/crearvisita" access="hasAuthority('Pro')"/>
+		<intercept-url pattern="/listarasesoria" access="hasAuthority('Pro')"/>
+		<intercept-url pattern="/crearasesoria" access="hasAuthority('Pro')"/>
+		
+		 
+		<form-login login-page="/login"
+			authentication-failure-url="/error"
+			username-parameter="username"
+			password-parameter="password"/> 
+			
+		<access-denied-handler error-page="/forbidden"/>
+		<csrf disabled="true"/>
+		<logout logout-success-url="/logoutsucces"/>
+	</http>
+	
+<!-- <authentication-manager>
+		<authentication-provider>
+			<password-encoder hash="bcrypt"/>
+			<user-service>
+				<user name="brian" password="$2a$10$T8Ai527fqCuYQRRlOXRqb.L5.Xskt0YjtpMuB1Xu767K2wy1RRw62" 
+					authorities="Cliente"/>
+			</user-service>
+		</authentication-provider>
+	</authentication-manager>
+	 -->	
+	 
+	 <authentication-manager>
+	 	<authentication-provider>
+	 		<password-encoder hash="bcrypt"/>
+	 		<jdbc-user-service data-source-ref="ds"
+	 			users-by-username-query="select usuario as username, pass as password, 1 as enabled from users where usuario = ?"
+	 			authorities-by-username-query="select usuario as username, role as authority from users where usuario = ?"
+	 		/>
+	 	</authentication-provider>
+	 </authentication-manager>
+		
+</bean:beans>

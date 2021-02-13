@@ -33,16 +33,7 @@
 		<logout logout-success-url="/logoutsucces"/>
 	</http>
 	
-<!-- <authentication-manager>
-		<authentication-provider>
-			<password-encoder hash="bcrypt"/>
-			<user-service>
-				<user name="brian" password="$2a$10$T8Ai527fqCuYQRRlOXRqb.L5.Xskt0YjtpMuB1Xu767K2wy1RRw62" 
-					authorities="Cliente"/>
-			</user-service>
-		</authentication-provider>
-	</authentication-manager>
-	 -->	
+ 
 	 
 	 <authentication-manager>
 	 	<authentication-provider>

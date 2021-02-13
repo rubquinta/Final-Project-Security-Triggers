@@ -172,7 +172,7 @@ IAdministrativoService usuServ;
 		return  "editarprofesional";
 	}
 	
-	//Método para enviar formulario con datos modificados a editar de tipo Profesional
+	//Metodo para enviar formulario con datos modificados a editar de tipo Profesional
 	
 	@RequestMapping(value = "/editar/Profesional", method = RequestMethod.POST )
 	public String editarProf(@RequestParam("run") int prof_runUsuario,
@@ -202,7 +202,7 @@ IAdministrativoService usuServ;
 		return  "editaradministrativo";
 	}
 	
-	//Método para enviar formulario con datos modificados a editar de tipo Administrativo
+	//Metodo para enviar formulario con datos modificados a editar de tipo Administrativo
 	
 	@RequestMapping(value = "/editar/Administrativo", method = RequestMethod.POST )
 	public String editarAdm( @RequestParam("run") int prof_runUsuario,

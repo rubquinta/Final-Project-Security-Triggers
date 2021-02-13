@@ -55,7 +55,7 @@ public class IndexTriggerController {
 		
 	}
 	
-	//Autenticación de Usuario
+	 
 
 		@RequestMapping(value="/login")
 		public String login() {

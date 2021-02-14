@@ -33,9 +33,21 @@
 		<logout logout-success-url="/logoutsucces"/>
 	</http>
 	
- 
+ 	<authentication-manager>
+		<authentication-provider>
+			<password-encoder hash="bcrypt"/>
+			<user-service>
+				<user name="cliente" password="$2a$10$DEaXKSFRFKAWDCbifppolOPS721bd0BtiRFWj9HHFiGfL5MNNDq3u" 
+					authorities="Cliente"/>
+			<user name="admin" password="$2a$10$8pT8wv2OXsmhnw6DrkrUTehEk/sflBv8x/eM4fjCMOdITjQXERUU6" 
+					authorities="Admin"/>
+			<user name="pro" password="$2a$10$lheLUYsO7RRxlPww4HoYJeccfh69zY.ucrraB2wtbcEJQ1H6U9S/2" 
+					authorities="Pro"/>
+			</user-service>
+		</authentication-provider>
+	</authentication-manager>
 	 
-	 <authentication-manager>
+	 <!-- <authentication-manager>
 	 	<authentication-provider>
 	 		<password-encoder hash="bcrypt"/>
 	 		<jdbc-user-service data-source-ref="ds"
@@ -43,6 +55,6 @@
 	 			authorities-by-username-query="select usuario as username, role as authority from users where usuario = ?"
 	 		/>
 	 	</authentication-provider>
-	 </authentication-manager>
+	 </authentication-manager> -->
 		
 </bean:beans>
